@@ -3,6 +3,7 @@ import java.util.LinkedList;
 import java.util.Stack;
 
 public class PalindromeCheckerApp {
+
     public static void main(String[] args) {
 
         String input = "civic";
@@ -10,7 +11,7 @@ public class PalindromeCheckerApp {
         Queue<Character> queue = new LinkedList<>();
         Stack<Character> stack = new Stack<>();
 
-
+        // Add characters to queue and stack
         for (char c : input.toCharArray()) {
             queue.add(c);
             stack.push(c);
@@ -18,7 +19,7 @@ public class PalindromeCheckerApp {
 
         boolean isPalindrome = true;
 
-
+        // Compare characters
         while (!queue.isEmpty()) {
             if (queue.remove() != stack.pop()) {
                 isPalindrome = false;
