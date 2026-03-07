@@ -1,12 +1,25 @@
 import java.util.*;
 
-public class PalindromeCheckerApp {
+class PalindromeService {
 
-    private static boolean check(String s, int start, int end) {
-        if (start >= end) return true;
-        if (s.charAt(start) != s.charAt(end)) return false;
-        return check(s, start + 1, end - 1);
+    public boolean checkPalindrome(String input) {
+
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+
+        return true;
     }
+}
+
+public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
@@ -14,7 +27,8 @@ public class PalindromeCheckerApp {
         System.out.print("Input: ");
         String input = sc.nextLine();
 
-        boolean result = check(input, 0, input.length() - 1);
+        PalindromeService service = new PalindromeService();
+        boolean result = service.checkPalindrome(input);
 
         System.out.println("Is Palindrome? : " + result);
 
