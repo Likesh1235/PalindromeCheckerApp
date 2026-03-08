@@ -1,3 +1,6 @@
+
+public class PalindromeCheckerApp {
+
 // UC13: Algorithm comparison implementation
 import java.util.*;
 
@@ -27,11 +30,11 @@ public class PalindromeCheckerApp {
         return recursiveCheck(input, start + 1, end - 1);
     }
 
+
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input: ");
-        String input = sc.nextLine();
+        String str = "madam";
+        boolean isPalindrome = true;
 
         long start1 = System.nanoTime();
         boolean result1 = twoPointerCheck(input);
@@ -47,6 +50,7 @@ public class PalindromeCheckerApp {
         System.out.println("Recursive Result: " + result2);
         System.out.println("Execution Time: " + (end2 - start2) + " ns");
 
-        sc.close();
+        System.out.println("Input text: " + str);
+        System.out.println("Is it a Palindrome: " + isPalindrome);
     }
 }
